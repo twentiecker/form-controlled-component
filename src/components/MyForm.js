@@ -22,7 +22,7 @@ class MyForm extends React.Component {
     this.setState((prevState) => {
       return {
         ...prevState,
-        name: event.target.name,
+        name: event.target.value,
       };
     });
   }
@@ -31,7 +31,7 @@ class MyForm extends React.Component {
     this.setState((prevState) => {
       return {
         ...prevState,
-        email: event.target.email,
+        email: event.target.value,
       };
     });
   }
@@ -40,7 +40,7 @@ class MyForm extends React.Component {
     this.setState((prevState) => {
       return {
         ...prevState,
-        gender: event.target.gender,
+        gender: event.target.value,
       };
     });
   }
@@ -51,13 +51,27 @@ class MyForm extends React.Component {
         <h1>Register Form</h1>
         <form>
           <label for="name">Name :</label>
-          <input id="name" type="text" value={this.state.name} />
+          <input
+            id="name"
+            type="text"
+            value={this.state.name}
+            onChange={this.onNameChangeEventHandler}
+          />
           <br />
           <label for="email">Email :</label>
-          <input id="email" type="text" value={this.state.email} />
+          <input
+            id="email"
+            type="text"
+            value={this.state.email}
+            onChange={this.onEmailChangeEventHandler}
+          />
           <br />
           <label for="gender">Gender :</label>
-          <select id="gender" value={this.state.gender}>
+          <select
+            id="gender"
+            value={this.state.gender}
+            onChange={this.onGenderChangeEventHandler}
+          >
             <option value="Man">Man</option>
             <option value="Woman">Woman</option>
           </select>
