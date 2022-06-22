@@ -10,7 +10,41 @@ class MyForm extends React.Component {
       email: "",
       gender: "Man",
     };
+
+    // binding this context to event handler
+    this.onNameChangeEventHandler = this.onNameChangeEventHandler.bind(this);
+    this.onEmailChangeEventHandler = this.onEmailChangeEventHandler.bind(this);
+    this.onGenderChangeEventHandler =
+      this.onGenderChangeEventHandler.bind(this);
   }
+
+  onNameChangeEventHandler(event) {
+    this.setState((prevState) => {
+      return {
+        ...prevState,
+        name: event.target.name,
+      };
+    });
+  }
+
+  onEmailChangeEventHandler(event) {
+    this.setState((prevState) => {
+      return {
+        ...prevState,
+        email: event.target.email,
+      };
+    });
+  }
+
+  onGenderChangeEventHandler(event) {
+    this.setState((prevState) => {
+      return {
+        ...prevState,
+        gender: event.target.gender,
+      };
+    });
+  }
+
   render() {
     return (
       <div>
