@@ -91,7 +91,7 @@ class MyForm extends React.Component {
           </select>
           <br />
           <button type="submit" onClick={this.onSubmitEventHandler}>
-            submit
+            submit data
           </button>
         </form>
       </div>
