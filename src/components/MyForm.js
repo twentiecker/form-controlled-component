@@ -16,6 +16,7 @@ class MyForm extends React.Component {
     this.onEmailChangeEventHandler = this.onEmailChangeEventHandler.bind(this);
     this.onGenderChangeEventHandler =
       this.onGenderChangeEventHandler.bind(this);
+    this.onSubmitEventHandler = this.onSubmitEventHandler.bind(this);
   }
 
   onNameChangeEventHandler(event) {
@@ -43,6 +44,19 @@ class MyForm extends React.Component {
         gender: event.target.value,
       };
     });
+  }
+
+  onSubmitEventHandler(event) {
+    // menghentikan aksi default dari tombol submit
+    event.preventDefault();
+
+    const message = `
+      Name: ${this.state.name}
+      Email: ${this.state.email}
+      Gender: ${this.state.gender}
+    `;
+
+    alert(message);
   }
 
   render() {
@@ -76,7 +90,9 @@ class MyForm extends React.Component {
             <option value="Woman">Woman</option>
           </select>
           <br />
-          <button type="submit">submit</button>
+          <button type="submit" onClick={this.onSubmitEventHandler}>
+            submit
+          </button>
         </form>
       </div>
     );
